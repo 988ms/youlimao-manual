@@ -1,0 +1,9 @@
+{
+  "name": "youlimao-manual",
+  "version": "1.0.0",
+  "private": true,
+  "description": "有理猫 YOULI CAT — 个人IP品牌手册",
+  "scripts": {
+    "dev": "node serve.js --host 127.0.0.1 --port 7100"
+  }
+}

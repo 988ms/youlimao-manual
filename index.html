@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>有理猫 YOULI CAT — 个人IP品牌手册 V1.0</title>
+<meta name="description" content="有理猫：一只讲道理的猫。个人IP品牌视觉手册，含创意概述、形象设定、标志、色彩、字体、表情与动作系统、应用规范。">
+<link rel="icon" type="image/png" href="assets/stamp.png">
+<style>
+/* ============ 有理猫设计令牌 · 基于 cat-zine 视觉系统 ============ */
+:root{
+  --ink:#171717;
+  --paper:#f5f0e6;
+  --paper-bright:#fffdf7;
+  --paper-muted:#ddd5c7;
+  /* 角色本色 */
+  --fur:#241812;
+  --robe:#4a2e7f;
+  --gold:#c9962e;
+  --cyan:#2fa8bc;
+  --flame:#f05a28;
+  --peri:#5869b5;
+  --signal:#f2cb45;
+  --leaf:#407a57;
+  --error:#b93636;
+  --shadow-ink:rgba(23,23,23,.18);
+  --line:2px solid var(--ink);
+  --line-bold:4px solid var(--ink);
+  --r-s:3px; --r-m:8px;
+  --off:5px 5px 0 var(--ink);
+  --max:1240px;
+  --display:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei","Arial Black",sans-serif;
+  --mono:"SF Mono",Menlo,Consolas,"Courier New",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--display);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+/* 纸纹理 + 半调：轻量叠加 */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+.halftone{
+  background-image:radial-gradient(var(--shadow-ink) 1px, transparent 1.4px);
+  background-size:9px 9px;
+}
+img{display:block;max-width:100%}
+a{color:var(--ink)}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+section{position:relative;padding:clamp(56px,9vw,120px) 0;border-top:var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,56px)}
+.sec-no{
+  font-family:var(--mono);font-size:.8rem;letter-spacing:.15em;
+  border:var(--line);padding:4px 10px;background:var(--paper-bright);box-shadow:3px 3px 0 var(--ink);
+  transform:rotate(-1.5deg);
+}
+.sec-title{font-size:clamp(1.9rem,4.6vw,3.2rem);font-weight:900;letter-spacing:.02em}
+.sec-en{font-family:var(--mono);font-size:.8rem;letter-spacing:.2em;color:var(--fur);opacity:.65}
+.lead{font-size:clamp(1.02rem,1.6vw,1.2rem);max-width:46em}
+/* 印章标签 */
+.stamp{
+  display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;
+  border:2.5px solid currentColor;padding:5px 12px;text-transform:uppercase;
+  transform:rotate(-2deg);border-radius:var(--r-s);font-weight:700;
+}
+.stamp.round{border-radius:999px}
+/* 卡片与面板 */
+.panel{background:var(--paper-bright);border:var(--line);border-radius:var(--r-m);box-shadow:var(--off)}
+.panel.flat{box-shadow:none}
+.tape{position:relative}
+.tape::after{
+  content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:92px;height:26px;background:rgba(242,203,69,.85);
+  border-left:1px dashed rgba(23,23,23,.25);border-right:1px dashed rgba(23,23,23,.25);
+}
+.hand-arrow{position:absolute;pointer-events:none}
+/* ============ 报头 ============ */
+.masthead{
+  position:sticky;top:0;z-index:100;background:var(--paper);
+  border-bottom:var(--line-bold);
+}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.wordmark{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.05rem;letter-spacing:.06em;text-decoration:none}
+.wordmark img{width:34px;height:34px}
+.mastnav{display:flex;gap:4px;flex-wrap:wrap}
+.mastnav a{
+  text-decoration:none;font-size:.82rem;font-weight:700;padding:6px 10px;border-radius:var(--r-s);
+}
+.mastnav a:hover{background:var(--signal)}
+.mastnav a.active{background:var(--ink);color:var(--paper)}
+/* ============ 封面 ============ */
+.cover{min-height:calc(100vh - 60px);display:grid;align-items:center;border-top:none;padding:clamp(32px,5vw,64px) 0}
+.cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,64px);align-items:center}
+.cover-kicker{display:flex;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+.cover h1{
+  font-size:clamp(2.6rem,6.6vw,5.2rem);line-height:1.08;font-weight:900;letter-spacing:.01em;
+}
+.cover h1 .hl{position:relative;white-space:nowrap}
+.cover h1 .hl::after{
+  content:"";position:absolute;left:-2%;bottom:6%;width:104%;height:.32em;background:var(--signal);
+  z-index:-1;transform:rotate(-1deg);
+}
+.cover-sub{margin-top:22px;font-size:clamp(1rem,1.5vw,1.18rem);max-width:34em}
+.cover-meta{margin-top:34px;display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+.kv-frame{position:relative}
+.kv-frame .panel{overflow:hidden;transform:rotate(1.2deg)}
+.kv-frame img{width:100%;height:auto}
+.kv-note{position:absolute;right:-14px;bottom:-18px;transform:rotate(2deg)}
+.scroll-cue{margin-top:56px;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.75rem;letter-spacing:.2em}
+.scroll-cue .bar{width:1px;height:44px;background:var(--ink);animation:cue 1.6s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){.scroll-cue .bar{animation:none}}
+/* ============ 打印与PDF导出 ============ */
+@page{size:A4 landscape;margin:10mm}
+@media print{
+  body::before{display:none}
+  .masthead{position:static}
+  .cover{min-height:auto}
+  .panel,.stamp,.quote,.kv-frame .panel,.polaroid{box-shadow:none}
+  .kv-frame .panel,.tape{transform:none}
+  .scroll-cue{display:none}
+  .sec-head{break-after:avoid}
+  .sheet,.logo-hero,.swatch-main{break-inside:avoid}
+  a{text-decoration:none}
+}
+/* ============ 创意概述 ============ */
+.big-idea{
+  font-size:clamp(1.5rem,3.4vw,2.5rem);font-weight:900;line-height:1.35;max-width:22em;
+}
+.big-idea em{font-style:normal;background:var(--flame);color:var(--paper-bright);padding:0 .18em;border-radius:var(--r-s)}
+.idea-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.idea-card{padding:26px 24px;position:relative}
+.idea-card h3{font-size:1.12rem;font-weight:900;margin:14px 0 8px}
+.idea-card p{font-size:.92rem;line-height:1.7}
+.idea-card .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;color:var(--flame);font-weight:700}
+.story-strip{
+  margin-top:48px;display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch;
+}
+.story{padding:30px}
+.story p+p{margin-top:12px}
+.quote{
+  margin-top:40px;border-left:6px solid var(--flame);padding:18px 24px;background:var(--paper-bright);
+  font-size:clamp(1.1rem,2vw,1.45rem);font-weight:900;transform:rotate(-.6deg);box-shadow:var(--off);
+  display:inline-block;
+}
+/* 标语墙 */
+.slogans{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+.slogan{
+  border:var(--line);background:var(--paper-bright);padding:22px 24px;border-radius:var(--r-m);
+  font-weight:900;font-size:clamp(1.05rem,1.8vw,1.4rem);position:relative;
+}
+.slogan .tag{position:absolute;top:-13px;left:18px;background:var(--signal);border:var(--line);padding:2px 10px;font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.1em}
+.slogan.alt{background:var(--ink);color:var(--paper)}
+.slogan.alt .tag{background:var(--paper-bright)}
+/* ============ 角色设定 ============ */
+.char-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.profile{padding:28px}
+.profile table{width:100%;border-collapse:collapse;font-size:.94rem}
+.profile th,.profile td{padding:11px 6px;border-bottom:1px dashed rgba(23,23,23,.3);text-align:left;vertical-align:top}
+.profile th{width:6.5em;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--robe);white-space:nowrap}
+.trait-list{display:grid;gap:14px;margin-top:6px}
+.trait{display:flex;gap:14px;align-items:flex-start;padding:16px 18px}
+.trait .dot{flex:0 0 auto;width:14px;height:14px;border:var(--line);border-radius:50%;margin-top:5px}
+.trait h4{font-weight:900;font-size:1rem}
+.trait p{font-size:.9rem;margin-top:3px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+.compare figure{overflow:hidden}
+.compare figcaption{padding:14px 18px;border-top:var(--line);font-size:.88rem}
+.compare img{width:100%;height:300px;object-fit:cover;object-position:top}
+/* ============ 标志系统 ============ */
+.logo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
+.logo-hero{padding:34px;display:flex;flex-direction:column;align-items:center;gap:22px}
+.logo-hero img{width:min(300px,60%)}
+.logo-vars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%}
+.logo-var{border:var(--line);border-radius:var(--r-m);aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:14px}
+.logo-var img{width:78%;height:78%;object-fit:contain}
+.logo-var.dark{background:var(--ink)}
+.logo-var.robeful{background:var(--robe)}
+.spec{padding:24px}
+.spec h4{font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.spec h4::before{content:"";width:12px;height:12px;background:var(--flame);border:var(--line);transform:rotate(45deg)}
+.spec ul{list-style:none;font-size:.9rem;display:grid;gap:8px}
+.spec li{padding-left:18px;position:relative}
+.spec li::before{content:"—";position:absolute;left:0;color:var(--flame)}
+.clear-space{margin-top:22px;border:1px dashed var(--ink);padding:22px;display:flex;justify-content:center;position:relative}
+.clear-space img{width:130px}
+.clear-space .cx{position:absolute;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em}
+.donts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.dont{padding:0;overflow:hidden}
+.dont .thumb{height:110px;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:var(--line)}
+.dont .thumb img{width:72px;height:72px;object-fit:contain}
+.dont .thumb .x{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.dont .thumb .x svg{width:100%;height:100%}
+.dont figcaption{padding:12px 14px;font-size:.82rem}
+.dont figcaption b{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--error)}
+/* ============ 色彩系统 ============ */
+.swatch-main{border:var(--line);border-radius:var(--r-m);overflow:hidden;box-shadow:var(--off);background:var(--paper-bright)}
+.swatch-main .chip{height:190px;background:var(--fur);position:relative}
+.swatch-main .chip::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(245,240,230,.14) 1px,transparent 1.4px);background-size:8px 8px}
+.swatch-main .info{padding:20px 24px}
+.swatch-main .info .name{font-size:1.35rem;font-weight:900}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+.swatch{border:var(--line);border-radius:var(--r-m);overflow:hidden;background:var(--paper-bright);box-shadow:4px 4px 0 var(--ink)}
+.swatch .chip{height:104px}
+.swatch .info{padding:12px 14px;font-size:.8rem}
+.swatch .info b{display:block;font-size:.9rem}
+.swatch .info code{font-family:var(--mono);font-size:.72rem}
+.role-note{margin-top:26px;padding:20px 24px;border:var(--line);border-radius:var(--r-m);font-size:.9rem;background:var(--signal)}
+.combos{margin-top:26px;display:grid;gap:12px}
+.combo{display:flex;height:44px;border:var(--line);border-radius:var(--r-s);overflow:hidden}
+.combo span{flex:1;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;font-weight:700}
+/* ============ 字体系统 ============ */
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.type-spec{padding:26px}
+.type-spec h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;color:var(--robe);margin-bottom:16px}
+.specimen{margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed rgba(23,23,23,.3)}
+.specimen .label{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;color:rgba(23,23,23,.55)}
+.specimen .h1{font-size:2.3rem;font-weight:900;line-height:1.2}
+.specimen .h2{font-size:1.6rem;font-weight:900}
+.specimen .body{font-size:1rem;line-height:1.7}
+.specimen .meta{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+/* ============ 表情 & 动作 ============ */
+.sheet{padding:14px;overflow:hidden}
+.sheet img{width:100%;height:auto}
+.caption-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.caption{
+  border:var(--line);border-radius:var(--r-s);background:var(--paper-bright);padding:8px 12px;
+  display:flex;align-items:center;gap:10px;font-size:.86rem;font-weight:700;
+}
+.caption .no{font-family:var(--mono);font-size:.66rem;color:var(--flame);font-weight:700}
+.usage{margin-top:22px;padding:18px 22px;font-size:.9rem;border-left:6px solid var(--cyan)}
+/* ============ 图形元素 ============ */
+.elem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.elem{padding:22px;min-height:170px}
+.elem h4{font-weight:900;margin-bottom:8px}
+.elem p{font-size:.85rem;line-height:1.65}
+.elem .demo{margin-top:14px;border:1px dashed rgba(23,23,23,.4);border-radius:var(--r-s);height:74px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.radius-row{display:flex;gap:16px;align-items:flex-end}
+.radius-box{border:var(--line);background:var(--paper-bright);width:74px;height:74px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.64rem}
+/* ============ 应用 ============ */
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.app-fig{padding:14px;overflow:hidden}
+.app-fig img{width:100%}
+.size-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.size-table th{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-align:left;color:var(--robe);border-bottom:var(--line-bold);padding:8px 6px}
+.size-table td{border-bottom:1px dashed rgba(23,23,23,.3);padding:9px 6px;vertical-align:top}
+.polaroid{
+  background:var(--paper-bright);border:var(--line);padding:12px 12px 0;transform:rotate(-1.4deg);
+  box-shadow:var(--off);max-width:340px;
+}
+.polaroid .ph{aspect-ratio:1;overflow:hidden;background:var(--peri);display:flex;align-items:flex-end}
+.polaroid .ph img{width:100%;height:100%;object-fit:cover}
+.polaroid .cap{padding:10px 4px 14px;font-size:.82rem;display:flex;justify-content:space-between;align-items:center}
+/* ============ 口吻 ============ */
+.voice-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.voice{padding:24px}
+.voice h4{font-weight:900;margin-bottom:14px;font-size:1.05rem}
+.voice ul{list-style:none;display:grid;gap:10px;font-size:.92rem}
+.voice li{padding:10px 14px;border:1px dashed rgba(23,23,23,.35);border-radius:var(--r-s)}
+.voice.good li{border-left:4px solid var(--leaf)}
+.voice.bad li{border-left:4px solid var(--error)}
+/* ============ 封底 ============ */
+.backcover{background:var(--ink);color:var(--paper);text-align:center;padding:clamp(72px,10vw,130px) 0;border-top:var(--line-bold)}
+.backcover img{width:min(200px,40%);margin:0 auto 30px}
+.backcover .big{font-size:clamp(1.8rem,4.6vw,3.4rem);font-weight:900;line-height:1.25}
+.backcover .mono{color:rgba(245,240,230,.6);margin-top:26px;word-break:break-all}
+/* ============ 响应式 ============ */
+@media (max-width:1000px){
+  .cover-grid,.story-strip,.char-grid,.logo-grid,.type-grid,.app-grid,.voice-cols,.compare{grid-template-columns:1fr}
+  .idea-cols,.elem-grid{grid-template-columns:1fr 1fr}
+  .swatches{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .idea-cols,.slogans,.donts,.elem-grid,.logo-vars{grid-template-columns:1fr}
+  .mastnav{display:none}
+  .caption-grid{grid-template-columns:1fr 1fr}
+  .cover-meta{gap:8px 12px;font-size:.68rem}
+  .cover-meta span{word-break:break-all;white-space:normal}
+  .cover-kicker{gap:8px}
+  .stamp{font-size:.64rem;padding:4px 9px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= 报头 ================= -->
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="#top">
+      <img src="assets/stamp.png" alt="有理猫印章标志">
+      有理猫 <span class="mono" style="font-weight:400">YOULI CAT</span>
+    </a>
+    <nav class="mastnav mono">
+      <a href="#idea">01 创意</a>
+      <a href="#character">02 形象</a>
+      <a href="#logo">03 标志</a>
+      <a href="#color">04 色彩</a>
+      <a href="#type">05 字体</a>
+      <a href="#face">06 表情</a>
+      <a href="#pose">07 动作</a>
+      <a href="#graphic">08 图形</a>
+      <a href="#app">09 应用</a>
+      <a href="#voice">10 口吻</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= 封面 · 主视觉 ================= -->
+<div class="cover" id="top">
+  <div class="wrap cover-grid">
+    <div>
+      <div class="cover-kicker">
+        <span class="stamp" style="color:var(--flame)">PERSONAL IP</span>
+        <span class="stamp round">品牌手册 V1.0</span>
+        <span class="stamp" style="color:var(--robe);transform:rotate(1.6deg)">CAT ZINE SYSTEM</span>
+      </div>
+      <h1>本喵说的，<br><span class="hl">都有理</span>。</h1>
+      <p class="cover-sub">
+        有理猫（YOULI CAT）——一只穿紫金祥云袍、持「有理槌」的黑猫。
+        它毒舌但讲理，傲娇但有据，此生使命只有一个：<br>
+        <b>让每一句话，都站得住脚。</b>
+      </p>
+      <div class="cover-meta mono">
+        <span>ISSUE 001 / 2026.10</span>
+        <span>·</span>
+        <span>HANDMADE ZINE EDITION</span>
+        <span>·</span>
+        <span>主色：袍紫 × 鎏金 × 青花青</span>
+      </div>
+      <div class="scroll-cue"><span class="bar"></span>SCROLL / 翻开这本手册</div>
+    </div>
+    <div class="kv-frame">
+      <div class="panel"><img src="assets/kv.jpg" alt="有理猫主视觉：持槌黑猫立于纸面，橘色斜切构图"></div>
+      <span class="kv-note stamp" style="color:var(--robe)">主视觉 KV-01</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 01 创意概述 ================= -->
+<section id="idea">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 01</span>
+      <h2 class="sec-title">创意概述</h2>
+      <span class="sec-en">CREATIVE OVERVIEW</span>
+    </div>
+
+    <p class="big-idea">
+      网上吵架，十句里有九句没理。于是有一天，一只黑猫看不下去了——它连夜翻完典据、披上祥云袍、举起木槌：
+      <em>「都让让，本喵来给你们断一断。」</em>
+    </p>
+
+    <div class="idea-cols">
+      <div class="panel idea-card tape">
+        <span class="k">POSITIONING / 定位</span>
+        <h3>个人向「道理」IP</h3>
+        <p>有理猫不是萌宠，是<b>观点人格</b>：替你把「有理」两个字说出来。适用于社交头像、表情包、观点配图、视频栏目角标与文创周边。</p>
+      </div>
+      <div class="panel idea-card tape">
+        <span class="k">MEMORY HOOK / 记忆点</span>
+        <h3>三个一眼记住的符号</h3>
+        <p><b>青眼圈</b>——熬夜翻典据熬出来的，正经猫的标志；<b>祥云袍</b>——开口必有祥云，说的都对；<b>有理槌</b>——一槌定音，锤锤有据。</p>
+      </div>
+      <div class="panel idea-card tape">
+        <span class="k">PERSONALITY / 性格</span>
+        <h3>毒舌 · 讲理 · 傲娇</h3>
+        <p>表面高冷，实则古道热肠；抬杠必引用，吐槽必押韵。从不无理取闹——因为它的名字，就叫<b>有理</b>。</p>
+      </div>
+    </div>
+
+    <div class="story-strip">
+      <div class="panel story">
+        <h3 style="font-weight:900;margin-bottom:12px">为什么是它？——命名故事</h3>
+        <p>「有理猫」取「有理」二字：一是谐音「有狸猫」，点明物种；二是把品牌态度写进名字里——<b>有理走遍天下</b>。观众第一次听到就明白它是干嘛的，第二次看到就忘不了。</p>
+        <p>视觉上它穿紫金祥云袍：紫为「据理力争」的沉稳，金为「句句属实」的分量，祥云纹来自原形象的传统袍服，保留最初的识别基因；配色锚定记忆，符号负责传播。</p>
+        <p>它来自一次 AI 辅助的创意发散：先立角色，再控风格，最后拆解成表情与姿态素材库——这本手册，就是这套方法的完整沉淀。</p>
+      </div>
+      <div class="panel story halftone">
+        <span class="stamp" style="color:var(--flame)">TARGET / 用在哪</span>
+        <ul style="list-style:none;margin-top:16px;display:grid;gap:12px;font-size:.92rem">
+          <li>◼ 微信 / QQ 表情包上架</li>
+          <li>◼ 公众号、小红书观点配图</li>
+          <li>◼ 视频栏目片头角标与转场</li>
+          <li>◼ 头像、封面、粉丝勋章</li>
+          <li>◼ 徽章、贴纸、帆布包等文创</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slogans">
+      <div class="slogan"><span class="tag">主口号</span>有理，不慌。</div>
+      <div class="slogan alt"><span class="tag">战斗口号</span>本喵说的都对，不对也对。</div>
+      <div class="slogan alt"><span class="tag">对线专用</span>无理退下，有理上座。</div>
+      <div class="slogan"><span class="tag">晚安口号</span>明天也要，有理有据。</div>
+    </div>
+
+    <div class="quote">「有理走遍天下，无理——喵喵喵喵。」</div>
+  </div>
+</section>
+
+<!-- ================= 02 角色设定 ================= -->
+<section id="character">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 02</span>
+      <h2 class="sec-title">角色设定</h2>
+      <span class="sec-en">CHARACTER PROFILE</span>
+    </div>
+
+    <div class="char-grid">
+      <div class="panel profile">
+        <table>
+          <tr><th>姓名</th><td>有理猫 / YOULI CAT</td></tr>
+          <tr><th>物种</th><td>黑猫（据说熬夜熬的）</td></tr>
+          <tr><th>身份</th><td>民间道理裁决所 · 首席仲裁猫</td></tr>
+          <tr><th>标志物</th><td>有理槌、紫金祥云袍</td></tr>
+          <tr><th>眼圈</th><td>青花青色——翻典据翻的</td></tr>
+          <tr><th>爱好</th><td>引经据典、押韵抬杠、盖章</td></tr>
+          <tr><th>讨厌</th><td>没理还大声、句尾的「呵呵」</td></tr>
+          <tr><th>口头禅</th><td>「有理。」「容本喵断一断。」</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="trait-list">
+          <div class="panel trait">
+            <span class="dot" style="background:var(--cyan)"></span>
+            <div><h4>青眼圈 = 认真过的痕迹</h4><p>第一眼识别符号。眼圈越青，道理越硬；也可以按情绪加深或变浅。</p></div>
+          </div>
+          <div class="panel trait">
+            <span class="dot" style="background:var(--robe)"></span>
+            <div><h4>紫金祥云袍 = 开口的分量</h4><p>深紫压场、鎏金点睛，祥云海浪纹沿用原形象袍服纹样，是传统感与辨识度之源。</p></div>
+          </div>
+          <div class="panel trait">
+            <span class="dot" style="background:var(--flame)"></span>
+            <div><h4>有理槌 = 一槌定音</h4><p>动作与 KV 的核心道具。槌落 = 结论已出，是整套 IP 的「句号」。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare">
+      <figure class="panel">
+        <img src="assets/original.jpg" alt="有理猫原始形象">
+        <figcaption><b>原稿 ORIGINAL</b> —— 初版设定：黑猫、青眼圈、紫金祥云袍，蜡笔质感。</figcaption>
+      </figure>
+      <figure class="panel">
+        <img src="assets/stamp.png" alt="有理猫新版印章标志">
+        <figcaption><b>新版 UPGRADED</b> —— 本手册版本：强化木刻版画线条，提炼为可印刷的印章标志。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- ================= 03 标志系统 ================= -->
+<section id="logo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 03</span>
+      <h2 class="sec-title">标志系统</h2>
+      <span class="sec-en">LOGO & STANDARDS</span>
+    </div>
+
+    <div class="logo-grid">
+      <div class="panel logo-hero">
+        <span class="stamp" style="color:var(--robe)">主标志 MAIN MARK</span>
+        <img src="assets/stamp.png" alt="有理猫圆形印章主标志">
+        <p class="mono">WOODCUT STAMP / 木刻印章式圆标</p>
+        <div class="logo-vars">
+          <div class="logo-var"><img src="assets/stamp.png" alt="全彩标志"></div>
+          <div class="logo-var dark"><img src="assets/stamp.png" alt="暗底标志"></div>
+          <div class="logo-var robeful"><img src="assets/stamp.png" alt="紫底标志"></div>
+        </div>
+      </div>
+      <div style="display:grid;gap:20px">
+        <div class="panel spec">
+          <h4>网格与安全区域</h4>
+          <ul>
+            <li>以猫眼间距为基准单位 X，标志四周留白 ≥ 1X。</li>
+            <li>印章圆环不可裁切，使用时保持完整圆形。</li>
+            <li>最小尺寸：数字端 48px，印刷端 15mm。</li>
+          </ul>
+          <div class="clear-space">
+            <span class="cx" style="top:4px;left:50%;transform:translateX(-50%)">1X</span>
+            <span class="cx" style="bottom:4px;left:50%;transform:translateX(-50%)">1X</span>
+            <span class="cx" style="left:6px;top:50%;transform:translateY(-50%)">1X</span>
+            <span class="cx" style="right:6px;top:50%;transform:translateY(-50%)">1X</span>
+            <img src="assets/stamp.png" alt="安全区域示意">
+          </div>
+        </div>
+        <div class="panel spec">
+          <h4>变体使用原则</h4>
+          <ul>
+            <li>浅底用全彩；深底或图片底优先暗底白描变体。</li>
+            <li>单双色印刷时可去金留紫，或纯墨单印。</li>
+            <li>头像、角标、 favicon 等场景直接用圆标，不加字。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:64px;margin-bottom:24px">
+      <span class="sec-no" style="transform:rotate(1.5deg)">DON'T</span>
+      <h2 class="sec-title" style="font-size:clamp(1.3rem,2.6vw,1.9rem)">标志禁用规范</h2>
+    </div>
+    <div class="donts">
+      <figure class="panel dont">
+        <div class="thumb"><img src="assets/stamp.png" style="transform:scaleX(1.6)" alt="错误示范：拉伸变形">
+          <span class="x"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M8 8 L92 92 M92 8 L8 92" stroke="#b93636" stroke-width="7"/></svg></span></div>
+        <figcaption><b>扭曲变形</b>请勿拉伸、压扁或改变印章比例。</figcaption>
+      </figure>
+      <figure class="panel dont">
+        <div class="thumb" style="background:repeating-linear-gradient(45deg,#f05a28 0 10px,#f2cb45 10px 20px)"><img src="assets/stamp.png" alt="错误示范：杂乱背景">
+          <span class="x"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M8 8 L92 92 M92 8 L8 92" stroke="#b93636" stroke-width="7"/></svg></span></div>
+        <figcaption><b>杂乱背景</b>请勿置于高对比花纹或照片上。</figcaption>
+      </figure>
+      <figure class="panel dont">
+        <div class="thumb" style="background:#315cff"><img src="assets/stamp.png" alt="错误示范：错误配色">
+          <span class="x"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M8 8 L92 92 M92 8 L8 92" stroke="#b93636" stroke-width="7"/></svg></span></div>
+        <figcaption><b>错误配色</b>请勿更换青花青、鎏金等指定色。</figcaption>
+      </figure>
+      <figure class="panel dont">
+        <div class="thumb"><img src="assets/stamp.png" style="width:26px;height:26px" alt="错误示范：过小尺寸">
+          <span class="x"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M8 8 L92 92 M92 8 L8 92" stroke="#b93636" stroke-width="7"/></svg></span></div>
+        <figcaption><b>过小尺寸</b>请勿缩小至祥云纹糊成一片。</figcaption>
+      </figure>
+      <figure class="panel dont">
+        <div class="thumb"><img src="assets/stamp.png" style="transform:rotate(24deg)" alt="错误示范：任意旋转">
+          <span class="x"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M8 8 L92 92 M92 8 L8 92" stroke="#b93636" stroke-width="7"/></svg></span></div>
+        <figcaption><b>任意旋转</b>装饰性倾斜不超过 ±2°。</figcaption>
+      </figure>
+      <figure class="panel dont">
+        <div class="thumb" style="background:var(--paper-muted)"><img src="assets/stamp.png" style="filter:grayscale(1) brightness(1.35);opacity:.45" alt="错误示范：褪色描边">
+          <span class="x"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M8 8 L92 92 M92 8 L8 92" stroke="#b93636" stroke-width="7"/></svg></span></div>
+        <figcaption><b>褪色描边</b>请勿降低对比度或加花哨描边。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 色彩系统 ================= -->
+<section id="color">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 04</span>
+      <h2 class="sec-title">色彩系统</h2>
+      <span class="sec-en">COLOR SYSTEM</span>
+    </div>
+
+    <div class="swatch-main">
+      <div class="chip"></div>
+      <div class="info">
+        <div class="name">黛黑 FUR BLACK</div>
+        <p class="mono">HEX #241812 · RGB 36/24/18 · CMYK 70/75/72/80 · 角色本色与正文墨色</p>
+      </div>
+    </div>
+
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--robe)"></div><div class="info"><b>袍紫 ROBE</b><code>#4A2E7F</code><br>主色 · 沉稳压场</div></div>
+      <div class="swatch"><div class="chip" style="background:var(--gold)"></div><div class="info"><b>鎏金 GOLD</b><code>#C9962E</code><br>点缀 · 句句属实</div></div>
+      <div class="swatch"><div class="chip" style="background:var(--cyan)"></div><div class="info"><b>青花青 RING CYAN</b><code>#2FA8BC</code><br>识别 · 眼圈与高光</div></div>
+      <div class="swatch"><div class="chip" style="background:var(--flame)"></div><div class="info"><b>朱橘 FLAME</b><code>#F05A28</code><br>强调 · 槌与重点</div></div>
+      <div class="swatch"><div class="chip" style="background:var(--peri)"></div><div class="info"><b>藤紫 PERIWINKLE</b><code>#5869B5</code><br>辅助 · 底场与链接</div></div>
+      <div class="swatch"><div class="chip" style="background:var(--signal)"></div><div class="info"><b>信号黄 SIGNAL</b><code>#F2CB45</code><br>标注 · 标签与荧光笔</div></div>
+      <div class="swatch"><div class="chip" style="background:var(--paper-bright)"></div><div class="info"><b>纸米 PAPER</b><code>#FFFDF7</code><br>底色 · 工作面</div></div>
+      <div class="swatch"><div class="chip" style="background:var(--leaf)"></div><div class="info"><b>黛绿 LEAF</b><code>#407A57</code><br>状态 · 通过 / 有效</div></div>
+    </div>
+
+    <div class="role-note">
+      <b>用色铁律：</b>一张画面只允许一个主色场（袍紫或黛黑）+ 一个强调色（朱橘或青花青）+ 纸米底；鎏金只做纹样与细节，不超过画面 10%。默认平涂，禁用多彩渐变与霓虹发光。
+    </div>
+
+    <div class="combos">
+      <div class="combo"><span style="background:var(--robe);color:#fffdf7">袍紫</span><span style="background:var(--gold);color:#241812">鎏金</span><span style="background:var(--paper-bright)">纸米</span><span class="mono" style="flex:2;padding:0 12px">主组合：KV / 海报 / 封面</span></div>
+      <div class="combo"><span style="background:var(--ink);color:#f5f0e6">黛黑</span><span style="background:var(--cyan);color:#171717">青花青</span><span style="background:var(--paper-bright)">纸米</span><span class="mono" style="flex:2;padding:0 12px">识别组合：头像 / 角标 / 印章</span></div>
+      <div class="combo"><span style="background:var(--flame);color:#fffdf7">朱橘</span><span style="background:var(--signal)">信号黄</span><span style="background:var(--ink);color:#f5f0e6">黛黑</span><span class="mono" style="flex:2;padding:0 12px">强调组合：标语 / 促销 / 表情包底</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 字体系统 ================= -->
+<section id="type">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 05</span>
+      <h2 class="sec-title">字体系统</h2>
+      <span class="sec-en">TYPOGRAPHY</span>
+    </div>
+
+    <div class="type-grid">
+      <div class="panel type-spec">
+        <h4>中文系统 CHINESE</h4>
+        <div class="specimen"><div class="label">标题 H1 / 48–72PT · 字重 900</div><div class="h1">有理，不慌。</div></div>
+        <div class="specimen"><div class="label">标题 H2 / 30–36PT · 字重 900</div><div class="h2">容本喵断一断</div></div>
+        <div class="specimen"><div class="label">正文 BODY / 16–18PT · 行高 1.6</div><div class="body">这是一段正文示例。有理猫说话短句为主，一句一个观点，绝不拖泥带水。</div></div>
+        <div class="specimen"><div class="label">中文用字：思源黑体 / 苹方 · 粗字重优先</div></div>
+      </div>
+      <div class="panel type-spec">
+        <h4>英文与元数据 EN & META</h4>
+        <div class="specimen"><div class="label">DISPLAY / ARCHIVO 类重型无衬线</div><div class="h1" style="font-family:Arial Black,Arial">YOULI CAT</div></div>
+        <div class="specimen"><div class="label">MONO / 等宽 · 全部大写 · 字距 +8%</div><div class="meta">ISSUE 001 / SECTION 04 / CMYK 70-75-72-80</div></div>
+        <div class="specimen"><div class="label">用法</div><div class="body">英文只作点缀与元数据；印章、编号、色值、尺寸一律等宽大写。正文禁用做旧纹理字体。</div></div>
+        <div class="specimen"><div class="label">排版行宽 45–75 字 · 句读用全角</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 表情系统 ================= -->
+<section id="face">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 06</span>
+      <h2 class="sec-title">表情系统</h2>
+      <span class="sec-en">EXPRESSION SYSTEM</span>
+    </div>
+    <p class="lead">九枚核心表情，覆盖对线、捧场、躺平全场景。圆形橘底为默认 sticker 规格，可直接切格上架微信表情。</p>
+
+    <div class="panel sheet tape" style="margin-top:32px">
+      <img src="assets/expressions.jpg" alt="有理猫九枚表情：得意、大笑、生气、疑惑、爆哭、装酷、睡觉、震惊、眨眼">
+    </div>
+    <div class="caption-grid">
+      <div class="caption"><span class="no">01</span>得意 · 「本喵早说了」</div>
+      <div class="caption"><span class="no">02</span>大笑 · 「哈哈哈哈有理」</div>
+      <div class="caption"><span class="no">03</span>生气 · 「无理还大声？」</div>
+      <div class="caption"><span class="no">04</span>疑惑 · 「你的依据是？」</div>
+      <div class="caption"><span class="no">05</span>爆哭 · 「被说中了」</div>
+      <div class="caption"><span class="no">06</span>装酷 · 「懒得理你」</div>
+      <div class="caption"><span class="no">07</span>睡觉 · 「明日再断」</div>
+      <div class="caption"><span class="no">08</span>震惊 · 「竟有如此歪理」</div>
+      <div class="caption"><span class="no">09</span>眨眼 · 「你懂我意思」</div>
+    </div>
+    <div class="panel usage">
+      <b>上架规范：</b>主图 240×240px GIF/PNG、缩略图 120×120px；单套 16 或 24 枚起传。导出时保持橘底圆 sticker 样式，命名格式「有理猫_得意」。
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 动作姿态库 ================= -->
+<section id="pose">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 07</span>
+      <h2 class="sec-title">动作姿态库</h2>
+      <span class="sec-en">ACTION POSES</span>
+    </div>
+    <p class="lead">九个标准动作，是内容配图、条漫与动画分镜的骨架。所有姿态必须露出「青眼圈 + 祥云袍」两个识别点。</p>
+
+    <div class="panel sheet tape" style="margin-top:32px">
+      <img src="assets/actions.jpg" alt="有理猫九个动作：端立、打坐、讲理、冲刺、起飞、挥手、阅卷、点赞、团睡">
+    </div>
+    <div class="caption-grid">
+      <div class="caption"><span class="no">01</span>端立 · 标准像</div>
+      <div class="caption"><span class="no">02</span>打坐 · 养精蓄锐</div>
+      <div class="caption"><span class="no">03</span>讲理 · 划重点</div>
+      <div class="caption"><span class="no">04</span>冲刺 · 赶去断案</div>
+      <div class="caption"><span class="no">05</span>起飞 · 有理直上青云</div>
+      <div class="caption"><span class="no">06</span>挥手 · 有理在此</div>
+      <div class="caption"><span class="no">07</span>阅卷 · 查典据</div>
+      <div class="caption"><span class="no">08</span>点赞 · 此言有理</div>
+      <div class="caption"><span class="no">09</span>团睡 · 休庭</div>
+    </div>
+  </div>
+</section>
+<!-- ================= 08 图形元素 ================= -->
+<section id="graphic">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 08</span>
+      <h2 class="sec-title">图形元素</h2>
+      <span class="sec-en">GRAPHIC ELEMENTS</span>
+    </div>
+
+    <div class="elem-grid">
+      <div class="panel elem">
+        <h4>祥云海浪纹</h4>
+        <p>源自袍服的金色纹样，是唯一指定装饰母题。只做平涂鎏金，不渐变、不描阴影。</p>
+        <div class="demo"><svg width="200" height="52" viewBox="0 0 200 52"><g fill="none" stroke="#C9962E" stroke-width="3.5" stroke-linecap="round"><path d="M10 38 q10 -22 22 -6 q6 8 14 2 q10 -8 4 -18"/><path d="M70 38 q10 -22 22 -6 q6 8 14 2 q10 -8 4 -18"/><path d="M130 38 q10 -22 22 -6 q6 8 14 2 q10 -8 4 -18"/><path d="M6 46 h188"/></g></svg></div>
+      </div>
+      <div class="panel elem">
+        <h4>粗墨线与木刻排线</h4>
+        <p>轮廓 2–4px 手绘感墨线，允许轻微抖动；阴影用木刻排线，禁止喷枪与柔边。</p>
+        <div class="demo"><svg width="200" height="52" viewBox="0 0 200 52"><g stroke="#241812" stroke-width="3" stroke-linecap="round"><path d="M14 10 v32 M26 6 v36 M38 12 v30 M60 8 L84 44 M72 6 L96 42 M118 44 q20 -34 40 0 M128 40 q10 -20 20 0 M158 10 v32 M170 14 v28 M182 8 v34"/></g></svg></div>
+      </div>
+      <div class="panel elem">
+        <h4>半调网点 · 纸纹理</h4>
+        <p>大色场内部用 8–9px 半调网点做印刷感；全页面铺 5% 纸颗粒。纹理永不压文字。</p>
+        <div class="demo halftone" style="width:200px"></div>
+      </div>
+      <div class="panel elem">
+        <h4>印章与胶带</h4>
+        <p>等宽大写印章标签承载编号与状态；和纸胶带固定图片，倾斜 ≤2°。</p>
+        <div class="demo" style="gap:12px"><span class="stamp" style="color:var(--flame);font-size:.62rem">VERIFIED</span><span class="stamp round" style="color:var(--robe);font-size:.62rem">ISSUE 001</span></div>
+      </div>
+      <div class="panel elem">
+        <h4>手绘箭头与批注圈</h4>
+        <p>用于强调与指引，一笔画成不修饰；单屏至多一枚，避免变成涂鸦。</p>
+        <div class="demo"><svg width="200" height="52" viewBox="0 0 200 52"><g fill="none" stroke="#F05A28" stroke-width="3.5" stroke-linecap="round"><path d="M16 40 C 60 44, 110 36, 158 16 M146 12 l14 3 -5 13"/><circle cx="60" cy="20" r="14" stroke="#171717" stroke-width="2.5" stroke-dasharray="4 5"/></g></svg></div>
+      </div>
+      <div class="panel elem">
+        <h4>圆角规范</h4>
+        <p>组件 3px、卡片 8px；印章圆形。不用大圆角与胶囊形。</p>
+        <div class="demo radius-row">
+          <div class="radius-box" style="border-radius:3px">3PX</div>
+          <div class="radius-box" style="border-radius:8px">8PX</div>
+          <div class="radius-box" style="border-radius:999px">ROUND</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 应用规范 ================= -->
+<section id="app">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 09</span>
+      <h2 class="sec-title">应用规范</h2>
+      <span class="sec-en">APPLICATIONS</span>
+    </div>
+
+    <div class="app-grid">
+      <div class="panel app-fig tape">
+        <img src="assets/merch.jpg" alt="有理猫周边样机：徽章、贴纸、帆布包、马克杯、笔记本">
+        <p class="mono" style="padding:12px 6px 6px">MERCHANDISE FLAT-LAY / 文创周边样机</p>
+      </div>
+      <div>
+        <div class="panel spec">
+          <h4>社交媒体尺寸</h4>
+          <table class="size-table">
+            <tr><th>场景</th><th>尺寸</th><th>要点</th></tr>
+            <tr><td>头像</td><td>400×400</td><td>圆标居中，露全眼圈</td></tr>
+            <tr><td>封面 / Banner</td><td>1500×500</td><td>猫居右，左侧留标题区</td></tr>
+            <tr><td>帖子配图</td><td>1080×1080</td><td>橘底 sticker 或纸米底 + 祥云纹</td></tr>
+            <tr><td>视频角标</td><td>≥120px 高</td><td>常驻右下角，透明底</td></tr>
+            <tr><td>表情包</td><td>240×240</td><td>见 SECTION 06 上架规范</td></tr>
+          </table>
+        </div>
+        <div style="margin-top:26px;display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start">
+          <div class="polaroid">
+            <div class="ph"><img src="assets/kv.jpg" alt="帖子示例配图"></div>
+            <div class="cap"><span>帖子示例 · 观点配图</span><span class="mono">1080²</span></div>
+          </div>
+          <div class="panel spec" style="flex:1;min-width:240px">
+            <h4>周边与印刷</h4>
+            <ul>
+              <li>徽章、贴纸优先用印章圆标；T 恤、帆布包用持槌全身像。</li>
+              <li>印刷一律 CMYK，金色斑位建议专色或烫金工艺。</li>
+              <li>最小印刷尺寸：徽章 20mm，T 恤图案宽 12cm。</li>
+              <li>包装与纸品用纸米底 + 祥云纹腰封，禁塑封亮膜。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 品牌口吻 ================= -->
+<section id="voice">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">SECTION 10</span>
+      <h2 class="sec-title">品牌口吻</h2>
+      <span class="sec-en">BRAND VOICE</span>
+    </div>
+    <p class="lead">有理猫开口，句短、有据、留半分客气。它是仲裁官，不是喷子。</p>
+
+    <div class="voice-cols" style="margin-top:32px">
+      <div class="panel voice good">
+        <h4>◼ 该这么说</h4>
+        <ul>
+          <li>「有理。」——一槌定音，能用一个字就不用两个。</li>
+          <li>「容本喵断一断：此事三分理，七分情。」</li>
+          <li>「你说得对，但不完全对。」</li>
+          <li>「依据呢？典据呢？拿出来看看。」</li>
+          <li>「今日休庭，明日再吵。」</li>
+        </ul>
+      </div>
+      <div class="panel voice bad">
+        <h4>◼ 不该这么说</h4>
+        <ul>
+          <li>人身攻击、地域攻击、阴阳怪气拉踩。</li>
+          <li>网络烂梗复读与无信息量哈哈哈。</li>
+          <li>站队喊口号——只断理，不断立场。</li>
+          <li>卖萌过度：可以可爱，不能没有骨头。</li>
+          <li>虚构引文与数据——有理猫绝不编典据。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote" style="margin-top:48px">「有理猫的每一句吐槽，都能写进脚注。」</div>
+  </div>
+</section>
+
+<!-- ================= 封底 ================= -->
+<footer class="backcover">
+  <div class="wrap">
+    <img src="assets/stamp.png" alt="有理猫印章">
+    <div class="big">有理走遍天下，<br>无理——喵喵喵喵。</div>
+    <p class="mono">YOULI CAT PERSONAL IP · BRAND ZINE V1.0 · 2026.10<br>
+    CHARACTER ORIGIN: HAND-DRAWN DRAFT → AI-ASSISTED REFINEMENT → WOODCUT STAMP SYSTEM<br>
+    本手册形象为个人原创 IP，转载请注明出处。</p>
+  </div>
+</footer>
+
+</body>
+</html>
